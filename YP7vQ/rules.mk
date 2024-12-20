@@ -10,4 +10,5 @@ TAP_DANCE_ENABLE = yes
 SPACE_CADET_ENABLE = no  
 CAPS_WORD_ENABLE = no 
 
+SRC += features/achordion.c
 SRC += features/caps_word.c
