@@ -21,7 +21,7 @@ enum tap_dance_codes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     TD(DANCE_0),    KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_BSLS,        
-    KC_LEFT_ALT,    KC_Q,           KC_W,           KC_F,           MT(MOD_LALT, KC_P),MT(MOD_LCTL, KC_B),                                MT(MOD_RCTL, KC_J),MT(MOD_LALT, KC_L),KC_U,           KC_Y,           KC_SCLN,        KC_MINUS,       
+    KC_LEFT_ALT,    KC_Q,           KC_W,           MT(MOD_LGUI, KC_F),MT(MOD_LALT, KC_P),MT(MOD_LCTL, KC_B),                                MT(MOD_RCTL, KC_J),MT(MOD_LALT, KC_L),MT(MOD_RGUI, KC_U),KC_Y,           KC_SCLN,        KC_MINUS,       
     KC_DELETE,      KC_A,           KC_R,           KC_S,           KC_T,           KC_G,                                           KC_M,           KC_N,           KC_E,           KC_I,           KC_O,           KC_QUOTE,       
     KC_PSCR,        KC_Z,           KC_X,           KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_TRANSPARENT, 
                                                     KC_TAB,         MT(MOD_LSFT, KC_BSPC),                                MT(MOD_RSFT, KC_SPACE),TG(1)
