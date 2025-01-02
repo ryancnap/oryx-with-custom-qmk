@@ -6,6 +6,8 @@
 enum custom_keycodes {
   RGB_SLD = ML_SAFE_RANGE,
   ST_MACRO_0,
+  ST_MACRO_1,
+  ST_MACRO_2,
 };
 
 
@@ -27,10 +29,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_TAB,         MT(MOD_LSFT, KC_BSPC),                                MT(MOD_RSFT, KC_SPACE),TG(1)
   ),
   [1] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,                                          KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         
+    KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,                                          KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_ASTR,        
     KC_TRANSPARENT, KC_EXLM,        KC_HOME,        KC_UP,          KC_END,         TD(DANCE_1),                                    MT(MOD_RCTL, KC_0),KC_7,           KC_8,           KC_9,           KC_EQUAL,       KC_MINUS,       
-    KC_TRANSPARENT, KC_CIRC,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_G,                                           KC_M,           KC_4,           KC_5,           KC_6,           KC_PLUS,        KC_BSPC,        
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_LBRC,        KC_RBRC,        KC_LCBR,        KC_RCBR,                                        KC_KP_ASTERISK, KC_1,           KC_2,           KC_3,           KC_SLASH,       KC_ENTER,       
+    KC_TRANSPARENT, KC_CIRC,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_G,                                           KC_M,           KC_4,           KC_5,           KC_6,           KC_0,           KC_PLUS,        
+    KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_0,     ST_MACRO_1,     KC_TRANSPARENT, KC_RCBR,                                        KC_DOT,         KC_1,           KC_2,           KC_3,           KC_SLASH,       KC_TRANSPARENT, 
                                                     KC_TAB,         KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [2] = LAYOUT_voyager(
@@ -44,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,       
     KC_TRANSPARENT, KC_Q,           TD(DANCE_2),    MT(MOD_LALT, KC_E),MT(MOD_LSFT, KC_R),MT(MOD_LCTL, KC_T),                                MT(MOD_RCTL, KC_Y),MT(MOD_RSFT, KC_U),MT(MOD_LALT, KC_I),TD(DANCE_3),    KC_P,           KC_BSLS,        
     KC_TRANSPARENT, KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,           KC_SCLN,        KC_QUOTE,       
-    KC_TRANSPARENT, KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       ST_MACRO_0,     
+    KC_TRANSPARENT, KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       ST_MACRO_2,     
                                                     KC_TRANSPARENT, KC_BSPC,                                        TD(DANCE_4),    TO(0)
   ),
 };
@@ -60,7 +62,7 @@ void keyboard_post_init_user(void) {
 const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     [0] = { {0,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {213,227,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {30,255,255}, {140,76,251}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {213,227,255}, {140,76,251}, {92,255,251} },
 
-    [1] = { {0,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {18,255,255}, {0,0,0}, {18,255,255}, {158,217,230}, {18,255,255}, {0,0,0}, {0,255,255}, {0,0,0}, {158,217,230}, {158,217,230}, {158,217,230}, {0,0,0}, {213,227,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {92,255,251}, {140,76,251}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {158,217,230}, {158,217,230}, {158,217,230}, {158,217,230}, {0,0,0}, {0,0,0}, {0,0,0}, {158,217,230}, {158,217,230}, {158,217,230}, {0,0,0}, {0,0,0}, {0,0,0}, {158,217,230}, {158,217,230}, {158,217,230}, {0,0,0}, {0,0,0}, {140,76,251}, {1,255,244} },
+    [1] = { {0,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {18,255,255}, {0,0,0}, {18,255,255}, {158,217,230}, {18,255,255}, {0,0,0}, {0,255,255}, {0,0,0}, {158,217,230}, {158,217,230}, {158,217,230}, {0,0,0}, {213,227,255}, {0,0,0}, {140,76,251}, {140,76,251}, {140,76,251}, {0,0,0}, {40,218,204}, {140,76,251}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {158,217,230}, {158,217,230}, {158,217,230}, {0,0,0}, {0,0,0}, {0,0,0}, {158,217,230}, {158,217,230}, {158,217,230}, {158,217,230}, {0,0,0}, {158,217,230}, {158,217,230}, {158,217,230}, {158,217,230}, {158,217,230}, {0,0,0}, {140,76,251}, {1,255,244} },
 
     [2] = { {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {45,220,239}, {140,26,246}, {0,0,0}, {0,0,0}, {40,218,204}, {40,218,204}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {158,217,230}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {158,217,230}, {158,217,230}, {158,217,230}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {92,255,251} },
 
@@ -114,6 +116,16 @@ bool rgb_matrix_indicators_user(void) {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case ST_MACRO_0:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_LBRC) SS_DELAY(100) SS_TAP(X_RBRC) SS_DELAY(100) SS_TAP(X_LEFT));
+    }
+    break;
+    case ST_MACRO_1:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LSFT(SS_TAP(X_9)) SS_DELAY(100) SS_LSFT(SS_TAP(X_0)) SS_DELAY(100) SS_TAP(X_LEFT));
+    }
+    break;
+    case ST_MACRO_2:
     if (record->event.pressed) {
       SEND_STRING(SS_LCTL(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_V) SS_DELAY(100) SS_LCTL(SS_TAP(X_LEFT)) SS_DELAY(100) SS_TAP(X_BSPC) SS_DELAY(100) SS_LCTL(SS_TAP(X_LEFT)));
     }
