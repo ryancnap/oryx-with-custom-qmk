@@ -28,13 +28,16 @@ void matrix_scan_user(void) {
 
 //combo
 enum combos {
-  GM_ENT
+  GM_ENT,
+  JL_DSH
 };
 
 const uint16_t PROGMEM gm_combo[] = {KC_G, KC_M, COMBO_END};
+const uint16_t PROGMEM jl_combo[] = {KC_J, KC_L, COMBO_END};
 
 combo_t key_combos[] = {
   [GM_ENT] = COMBO(gm_combo, KC_ENTER),
+  [JL_DSH] = COMBO(jl_combo, KC_MINUS),
 };
 //end combo
 
